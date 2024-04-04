@@ -45,7 +45,7 @@ Route::group([
 
         Route::get('get-opportunity', [OpportunityController::class,'listOpportunity']);
         Route::post('create-opportunity', [OpportunityController::class,'createOpportunity']);
-        Route::post('update-opportunity', [OpportunityController::class,'updateOpportunity']);
+        Route::post('update-opportunity/{id}', [OpportunityController::class,'updateOpportunity']);
         Route::post('delete-opportunity', [OpportunityController::class,'deleteOpportunity']);
        
         Route::get('get-benefit', [BenefitController::class,'getBenefits']);
