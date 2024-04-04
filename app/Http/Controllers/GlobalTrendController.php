@@ -7,12 +7,22 @@ use App\Models\GlobalTrend;
 use App\Models\Quote;
 use App\Models\OrientationValue;
 use App\Models\ClientPartner;
+use App\Models\About;
+use App\Models\Visi;
+use App\Models\Misi;
+use App\Models\Opportunity;
+use App\Models\BenefitProgram;
 use Illuminate\Support\Facades\Storage;
 
 class GlobalTrendController extends Controller
 {
     public function dataProfile()
     {
+        $dataAbout = About::get();
+        $dataVisi = Visi::get();
+        $dataMisi = Misi::get();
+        $dataOpportunity = Opportunity::get();
+        $dataBenefit = BenefitProgram::get();
         $dataTrend = GlobalTrend::get();
         $dataQuote = Quote::get();
         $dataValue = OrientationValue::get();
@@ -20,6 +30,11 @@ class GlobalTrendController extends Controller
         
         return response()->json([
             'message' => 'success',
+            'dataAbout' => $dataAbout,
+            'dataVisi' => $dataVisi,
+            'dataMisi' => $dataMisi,
+            'dataOpportunity' => $dataOpportunity,
+            'dataBenefit' => $dataBenefit,
             'dataTrend' => $dataTrend,
             'dataQuote' => $dataQuote,
             'dataValue' => $dataValue,
