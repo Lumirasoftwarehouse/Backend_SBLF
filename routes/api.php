@@ -12,6 +12,7 @@ use App\Http\Controllers\GlobalTrendController;
 use App\Http\Controllers\QuoteController;
 use App\Http\Controllers\OrientationValueController;
 use App\Http\Controllers\ClientPartnerController;
+use App\Http\Controllers\RegisterController;
 
 Route::group([
     'prefix' => 'auth'
@@ -71,9 +72,14 @@ Route::group([
         Route::post('create-client', [ClientPartnerController::class,'createClientPartner']);
         Route::post('update-client/{id}', [ClientPartnerController::class,'updateClientPartner']);
         Route::delete('delete-client/{id}', [ClientPartnerController::class,'deleteClientPartner']);
+
+        Route::get('list-register', [RegisterController::class,'listRegister']);
+        Route::post('update-register/{id}', [RegisterController::class,'updateRegister']);
+        Route::delete('delete-register/{id}', [RegisterController::class,'deleteRegister']);
       });
       
     });
   });
   
+  Route::post('insert-register', [RegisterController::class,'insertRegister']);
 Route::get('list-profile', [GlobalTrendController::class,'dataProfile']);
