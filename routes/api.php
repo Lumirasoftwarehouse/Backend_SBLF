@@ -13,6 +13,9 @@ use App\Http\Controllers\QuoteController;
 use App\Http\Controllers\OrientationValueController;
 use App\Http\Controllers\ClientPartnerController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\AnggotaController;
+use App\Http\Controllers\PengurusController;
 
 Route::group([
     'prefix' => 'auth'
@@ -76,6 +79,22 @@ Route::group([
         Route::get('list-register', [RegisterController::class,'listRegister']);
         Route::post('update-register/{id}', [RegisterController::class,'updateRegister']);
         Route::delete('delete-register/{id}', [RegisterController::class,'deleteRegister']);
+
+
+        Route::get('list-service', [ServiceController::class,'listService']);
+        Route::post('create-service', [ServiceController::class,'createService']);
+        Route::post('update-service/{id}', [ServiceController::class,'updateService']);
+        Route::delete('delete-service/{id}', [ServiceController::class,'deleteService']);
+
+        Route::get('list-anggota', [AnggotaController::class,'listAnggota']);
+        Route::post('create-anggota', [AnggotaController::class,'createAnggota']);
+        Route::post('update-anggota/{id}', [AnggotaController::class,'updateAnggota']);
+        Route::delete('delete-anggota/{id}', [AnggotaController::class,'deleteAnggota']);
+
+        Route::get('list-pengurus', [PengurusController::class,'listPengurus']);
+        Route::post('create-pengurus', [PengurusController::class,'createPengurus']);
+        Route::post('update-pengurus/{id}', [PengurusController::class,'updatePengurus']);
+        Route::delete('delete-pengurus/{id}', [PengurusController::class,'deletePengurus']);
       });
       
     });
