@@ -12,6 +12,7 @@ use App\Models\Visi;
 use App\Models\Misi;
 use App\Models\Opportunity;
 use App\Models\BenefitProgram;
+use App\Models\Service;
 use Illuminate\Support\Facades\Storage;
 
 class GlobalTrendController extends Controller
@@ -27,6 +28,7 @@ class GlobalTrendController extends Controller
         $dataQuote = Quote::get();
         $dataValue = OrientationValue::get();
         $dataClient = ClientPartner::get();
+        $dataService = Service::get();
         
         return response()->json([
             'message' => 'success',
@@ -38,7 +40,8 @@ class GlobalTrendController extends Controller
             'dataTrend' => $dataTrend,
             'dataQuote' => $dataQuote,
             'dataValue' => $dataValue,
-            'dataClient' => $dataClient
+            'dataClient' => $dataClient,
+            'dataService' => $dataService,
         ], 200);
     }
 

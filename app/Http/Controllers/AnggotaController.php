@@ -18,7 +18,7 @@ class AnggotaController extends Controller
     public function createAnggota(Request $request)
     {
         $validateData = $request->validate([
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif',
             'nama' => 'required',
             'deskripsi' => 'required',
         ]);
@@ -38,7 +38,7 @@ class AnggotaController extends Controller
     public function updateAnggota(Request $request, $id)
     {
         $validateData = $request->validate([
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif',
             'nama' => 'required',
             'deskripsi' => 'required',
         ]);
