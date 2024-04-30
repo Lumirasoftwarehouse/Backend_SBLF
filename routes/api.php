@@ -34,8 +34,8 @@ Route::group([
       ], function () {
         Route::get('get-about', [AboutController::class,'getAbout']);
         Route::post('create-about', [AboutController::class,'createAbout']);
-        Route::post('update-about', [AboutController::class,'updateAbout']);
-        Route::delete('delete-about', [AboutController::class,'deleteAbout']);
+        Route::post('update-about/{id}', [AboutController::class,'updateAbout']);
+        Route::delete('delete-about/{id}', [AboutController::class,'deleteAbout']);
 
         Route::get('get-visi', [VisiController::class,'getVisi']);
         Route::post('create-visi', [VisiController::class,'createVisi']);
@@ -44,18 +44,18 @@ Route::group([
 
         Route::get('get-misi', [MisiController::class,'getMisi']);
         Route::post('create-misi', [MisiController::class,'createMisi']);
-        Route::post('update-misi', [MisiController::class,'updateMisi']);
-        Route::post('delete-misi', [MisiController::class,'deleteMisi']);
+        Route::post('update-misi/{id}', [MisiController::class,'updateMisi']);
+        Route::delete('delete-misi/{id}', [MisiController::class,'deleteMisi']);
 
         Route::get('get-opportunity', [OpportunityController::class,'listOpportunity']);
         Route::post('create-opportunity', [OpportunityController::class,'createOpportunity']);
         Route::post('update-opportunity/{id}', [OpportunityController::class,'updateOpportunity']);
-        Route::post('delete-opportunity', [OpportunityController::class,'deleteOpportunity']);
+        Route::delete('delete-opportunity/{id}', [OpportunityController::class,'deleteOpportunity']);
        
         Route::get('get-benefit', [BenefitController::class,'getBenefits']);
         Route::post('create-benefit', [BenefitController::class,'createBenefit']);
-        Route::post('update-benefit', [BenefitController::class,'updateBenefit']);
-        Route::post('delete-benefit', [BenefitController::class,'deleteBenefit']);
+        Route::post('update-benefit/{id}', [BenefitController::class,'updateBenefit']);
+        Route::delete('delete-benefit/{id}', [BenefitController::class,'deleteBenefit']);
 
 
         Route::get('list-trend', [GlobalTrendController::class,'listGlobalTrend']);
