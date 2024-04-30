@@ -17,7 +17,7 @@ class OpportunityController extends Controller
     public function createOpportunity(Request $request)
     {
         $validateData = $request->validate([
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif',
             'judul' => 'required',
             'deskripsi' => 'required',
         ]);
@@ -39,7 +39,7 @@ class OpportunityController extends Controller
     public function updateOpportunity(Request $request, $id)
     {
         $validateData = $request->validate([
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif',
             'judul' => 'required',
             'deskripsi' => 'required',
         ]);
