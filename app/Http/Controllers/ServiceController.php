@@ -18,7 +18,7 @@ class ServiceController extends Controller
     public function createService(Request $request)
     {
         $validateData = $request->validate([
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif',
             'judul' => 'required',
         ]);
 
@@ -36,7 +36,7 @@ class ServiceController extends Controller
     public function updateService(Request $request, $id)
     {
         $validateData = $request->validate([
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif',
             'judul' => 'required',
         ]);
 
