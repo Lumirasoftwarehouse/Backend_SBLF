@@ -19,6 +19,7 @@ class CreateRegistersTable extends Migration
             $table->string('email');
             $table->string('num_phone');
             $table->string('company');
+            $table->string('bidang');
             $table->timestamps();
         });
     }

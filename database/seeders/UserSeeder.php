@@ -22,11 +22,11 @@ class UserSeeder extends Seeder
             'password' => Hash::make('12345'),
         ]);
 
-        Register::create([
-            'fullname' => 'admin',
-            'email' => 'admin@gmail.com',
-            'num_phone' => '72074242',
-            'company' => 'test',
-        ]);
+        // Register::create([
+        //     'fullname' => 'admin',
+        //     'email' => 'admin@gmail.com',
+        //     'num_phone' => '72074242',
+        //     'company' => 'test',
+        // ]);
     }
 }

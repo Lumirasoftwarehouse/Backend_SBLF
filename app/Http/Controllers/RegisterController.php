@@ -20,7 +20,8 @@ class RegisterController extends Controller
             'fullname' => 'required', 
             'email' => 'required|email|unique:registers', // pastikan email unik
             'num_phone' => 'required', 
-            'company' => 'required'
+            'company' => 'required',
+            'bidang' => 'required'
         ]);
 
         $register = new Register();
@@ -28,6 +29,7 @@ class RegisterController extends Controller
         $register->email = $validateData['email'];
         $register->num_phone = $validateData['num_phone'];
         $register->company = $validateData['company'];
+        $register->bidang = $validateData['bidang'];
         $register->save();
 
         return response()->json(['message' => 'success'], 201);
@@ -39,7 +41,8 @@ class RegisterController extends Controller
             'fullname' => 'required', 
             'email' => 'required|email|unique:registers,email,' . $id, // pastikan email unik kecuali untuk dirinya sendiri
             'num_phone' => 'required', 
-            'company' => 'required'
+            'company' => 'required',
+            'bidang' => 'required'
         ]);
 
         $register = Register::find($id);
@@ -51,6 +54,7 @@ class RegisterController extends Controller
         $register->email = $validateData['email'];
         $register->num_phone = $validateData['num_phone'];
         $register->company = $validateData['company'];
+        $register->bidang = $validateData['bidang'];
         $register->save();
 
         return response()->json(['message' => 'success']);

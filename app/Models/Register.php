@@ -9,5 +9,5 @@ class Register extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['fullname', 'email', 'num_phone', 'company'];
+    protected $fillable = ['fullname', 'email', 'num_phone', 'company', 'bidang'];
 }
