@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\GlobalTrend;
 use App\Models\Quote;
+use App\Models\Berita;
 use App\Models\OrientationValue;
 use App\Models\ClientPartner;
 use App\Models\About;
@@ -29,6 +30,7 @@ class GlobalTrendController extends Controller
         $dataValue = OrientationValue::get();
         $dataClient = ClientPartner::get();
         $dataService = Service::get();
+        $dataBerita = Berita::get();
         
         return response()->json([
             'message' => 'success',
@@ -42,6 +44,7 @@ class GlobalTrendController extends Controller
             'dataValue' => $dataValue,
             'dataClient' => $dataClient,
             'dataService' => $dataService,
+            'dataBerita' => $dataBerita,
         ], 200);
     }
 

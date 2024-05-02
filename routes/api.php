@@ -16,6 +16,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\AnggotaController;
 use App\Http\Controllers\PengurusController;
+use App\Http\Controllers\BeritaController;
 
 Route::group([
     'prefix' => 'auth'
@@ -95,6 +96,11 @@ Route::group([
         Route::post('create-pengurus', [PengurusController::class,'createPengurus']);
         Route::post('update-pengurus/{id}', [PengurusController::class,'updatePengurus']);
         Route::delete('delete-pengurus/{id}', [PengurusController::class,'deletePengurus']);
+
+        Route::get('get-berita', [BeritaController::class,'listBerita']);
+        Route::post('create-berita', [BeritaController::class,'createBerita']);
+        Route::post('update-berita/{id}', [BeritaController::class,'updateBerita']);
+        Route::delete('delete-berita/{id}', [BeritaController::class,'deleteBerita']);
       });
       
     });
