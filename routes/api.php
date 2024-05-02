@@ -106,5 +106,6 @@ Route::group([
     });
   });
   
-  Route::post('insert-register', [RegisterController::class,'insertRegister']);
+Route::post('insert-register', [RegisterController::class,'insertRegister']);
 Route::get('list-profile', [GlobalTrendController::class,'dataProfile']);
+Route::get('list-berita', [BeritaController::class,'listBerita']);
